@@ -1,0 +1,274 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+    color: white;
+    background: linear-gradient(135deg, #090b20, #281047, #10152e);
+}
+
+.app {
+    width: 100%;
+    max-width: 1000px;
+    padding: 24px;
+    background: #10132b;
+    border: 1px solid #35285b;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px #0008;
+}
+
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 24px;
+}
+
+.topbar h1 {
+    font-size: 25px;
+}
+
+.autoplay {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #d6d3ef;
+    font-size: 13px;
+}
+
+.autoplay input {
+    accent-color: #9864ff;
+    width: 17px;
+    height: 17px;
+    cursor: pointer;
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 24px;
+}
+
+.sidebar {
+    padding: 18px;
+    background: #191c3b;
+    border-radius: 15px;
+}
+
+.sidebar h3 {
+    margin-bottom: 15px;
+}
+
+#playlist {
+    list-style: none;
+}
+
+.song-item {
+    padding: 15px 12px;
+    margin-bottom: 8px;
+    border-radius: 9px;
+    background: #222544;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.song-item:hover {
+    background: #38275f;
+}
+
+.song-item.active {
+    background: #49317d;
+    border-left: 3px solid #ad83ff;
+}
+
+.track-artist {
+    display: block;
+    margin-top: 5px;
+    font-size: 12px;
+    color: #b6b6d3;
+}
+
+.player {
+    min-width: 0;
+    padding: 30px;
+    text-align: center;
+    background: radial-gradient(ellipse at top, #241847, #11142e 75%);
+    border: 1px solid #30254f;
+    border-radius: 15px;
+}
+
+.cover-wrap {
+    width: 220px;
+    height: 220px;
+    max-width: 100%;
+    margin: 0 auto 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #673ab7, #a855f7, #27205e);
+    box-shadow: 0 12px 35px #0005;
+}
+
+#cover-placeholder {
+    font-size: 90px;
+}
+
+.cover-wrap.playing {
+    animation: glow 1.8s infinite alternate;
+}
+
+.song-info {
+    margin-bottom: 22px;
+}
+
+.song-info h2 {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.song-info p {
+    font-size: 14px;
+    color: #bcbad9;
+}
+
+.time-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    color: #c2c1dc;
+    font-size: 12px;
+}
+
+input[type="range"] {
+    accent-color: #a06bff;
+    cursor: pointer;
+}
+
+#progress {
+    width: 100%;
+    display: block;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin: 28px 0;
+}
+
+.controls button {
+    width: 43px;
+    height: 43px;
+    border: none;
+    border-radius: 50%;
+    color: white;
+    background: #272947;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.2s;
+}
+
+.controls button:hover {
+    transform: scale(1.08);
+    background: #49337e;
+}
+
+.controls .play-btn {
+    width: 64px;
+    height: 64px;
+    font-size: 24px;
+    background: linear-gradient(135deg, #b05af8, #7544ee);
+    box-shadow: 0 5px 25px #8b5cf644;
+}
+
+.controls button.selected {
+    outline: 2px solid #a06bff;
+    background: #49337e;
+}
+
+.volume-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+}
+
+#volume {
+    flex: 1;
+    min-width: 0;
+}
+
+#volume-value {
+    min-width: 38px;
+    color: #c2c1dc;
+    font-size: 12px;
+}
+
+#status {
+    min-height: 18px;
+    margin-top: 18px;
+    color: #d3baff;
+    font-size: 12px;
+}
+
+@keyframes glow {
+    from { box-shadow: 0 0 12px #8b5cf633; }
+    to { box-shadow: 0 0 30px #8b5cf699; }
+}
+
+@media (max-width: 700px) {
+    body {
+        padding: 10px;
+    }
+
+    .app {
+        padding: 14px;
+    }
+
+    .topbar h1 {
+        font-size: 19px;
+    }
+
+    .layout {
+        grid-template-columns: 1fr;
+    }
+
+    .player {
+        padding: 22px 14px;
+    }
+
+    .cover-wrap {
+        width: 190px;
+        height: 190px;
+    }
+
+    .controls {
+        gap: 8px;
+    }
+
+    .controls button {
+        width: 37px;
+        height: 37px;
+        font-size: 13px;
+    }
+
+    .controls .play-btn {
+        width: 53px;
+        height: 53px;
+        font-size: 20px;
+    }
+}

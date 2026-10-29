@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Music Player</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+<div class="app">
+
+    <header class="topbar">
+        <h1>🎵 My Music Player</h1>
+        <label class="autoplay">
+            Autoplay
+            <input type="checkbox" id="autoplay" checked>
+        </label>
+    </header>
+
+    <div class="layout">
+
+        <aside class="sidebar">
+            <h3>Playlist</h3>
+            <ul id="playlist"></ul>
+        </aside>
+
+        <main class="player">
+
+            <div class="cover-wrap">
+                <div id="cover-placeholder">🎵</div>
+            </div>
+
+            <div class="song-info">
+                <h2 id="title">My Song</h2>
+                <p id="artist">My Artist</p>
+            </div>
+
+            <audio id="audio" preload="metadata"></audio>
+
+            <div class="time-row">
+                <span id="current-time">0:00</span>
+                <span id="duration">0:00</span>
+            </div>
+
+            <input type="range" id="progress"
+                   min="0" max="100" value="0"
+                   aria-label="Song progress">
+
+            <div class="controls">
+                <button id="shuffle" title="Shuffle">🔀</button>
+                <button id="prev" title="Previous">⏮</button>
+                <button id="play" class="play-btn"
+                        title="Play">▶</button>
+                <button id="next" title="Next">⏭</button>
+                <button id="repeat" title="Repeat">🔁</button>
+            </div>
+
+            <div class="volume-row">
+                <span>🔊</span>
+                <input type="range" id="volume"
+                       min="0" max="1" step="0.01"
+                       value="0.7" aria-label="Volume">
+                <span id="volume-value">70%</span>
+            </div>
+
+            <p id="status" role="status"></p>
+
+        </main>
+    </div>
+</div>
+
+</body>
+</html>
